@@ -1,0 +1,116 @@
+html, body, #root {
+  margin: 0;
+  height: 100%;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.table {
+  overflow-x: auto;
+  margin: 10px;
+}
+
+.table__content {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  margin-top: 10px;
+}
+
+.table__content-header {
+  border: inherit;
+  padding: 10px;
+}
+
+.table__content-header-name {
+  text-decoration: none;
+  color: black;
+}
+
+.table__content-row {
+  border: solid rgba(128, 128, 128, 0.5);
+  border-width: 1px 1px 1px 1px;
+}
+
+.table__content-cell {
+  padding: 5px 10px;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.table__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.table__search-input {
+  margin-left: 10px;
+}
+
+.table__pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10px;
+}
+
+.table__pagination > a {
+  text-decoration: none;
+  color: black;
+}
+
+.table__pagination > a:active {
+  color: white;
+}
+
+.table__pagination > a:hover {
+  background-color: blue;
+  color: white;
+}
+
+.table__pagination-prev {
+  border: solid rgba(128, 128, 128, 0.5);
+  border-width: 1px 0px 1px 1px;
+  border-radius: 3px 0px 0px 3px;
+  padding: 5px 10px;
+}
+
+.table__pagination-next {
+  border: solid rgba(128, 128, 128, 0.5);
+  border-width: 1px 1px 1px 0px;
+  border-radius: 0px 3px 3px 0px;
+  padding: 5px 10px;
+}
+
+.table__pagination-number {
+  padding: 5px 10px;
+  border: solid rgba(128, 128, 128, 0.5);
+  border-width: 1px 0px 1px 0px;
+}
+
+.table__pagination-number.page-active {
+  background-color: darkblue;
+  color: white;
+}
+/*# sourceMappingURL=table.css.map */

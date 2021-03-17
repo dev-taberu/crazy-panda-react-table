@@ -1,0 +1,100 @@
+
+html, body, #root {
+    margin: 0;
+    height: 100%;
+}
+
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table {
+    overflow-x: auto;
+    margin: 10px;
+    &__content {
+        border: 1px solid rgba($color: grey, $alpha: 0.5);
+        margin-top: 10px;
+    
+        &-header {
+            border: inherit;
+            padding: 10px;
+    
+            &-name {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    
+        &-row {
+            border: solid rgba($color: grey, $alpha: 0.5);
+            border-width: 1px 1px 1px 1px;
+        }
+    
+        &-cell {
+            padding: 5px 10px;
+            border:1px solid rgba($color: grey, $alpha: 0.5);
+        }
+    }
+
+    &__search {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 10px;
+
+        &-lable {
+        }
+        &-input {
+            margin-left: 10px;
+        }
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 10px;
+
+        & > a {
+            text-decoration: none;
+            color: black;
+
+            &:active {
+                color: white;
+            }
+
+            &:hover {
+                background-color: blue;
+                color: white;
+            }
+        }
+
+        &-prev {
+            border: solid rgba($color: grey, $alpha: 0.5);
+            border-width: 1px 0px 1px 1px;
+            border-radius: 3px 0px 0px 3px;
+            padding: 5px 10px;
+        }
+
+        &-next {
+            border: solid rgba($color: grey, $alpha: 0.5);
+            border-width: 1px 1px 1px 0px;
+            border-radius: 0px 3px 3px 0px;
+            padding: 5px 10px;
+        }
+
+        &-number {
+            padding: 5px 10px;
+            border: solid rgba($color: grey, $alpha: 0.5);
+            border-width: 1px 0px 1px 0px;
+
+            &.page-active {
+                background-color: darkblue;
+                color: white;
+            }
+        }
+        
+    }
+}
