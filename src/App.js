@@ -21,13 +21,14 @@ const dataGeneration = () => {
   for(let i = 0; i < 30; i++) {
     data.push({name: `Maria${i}`, surname: 'Solnceva', age: Math.trunc(i / 2) + 23, birthDate: 1998, city: 'Voronezh'})
   }
+  data.push({name: `Ivna`, surname: 'test', age: 21, birthDate: 1009, city:'Moscorw'})
   return data;
 }
 
 function App() {
   return (
     <div className="App">
-      <Table headers={tableHeaders} data={dataGeneration()}/>
+      <Table headers={tableHeaders} data={dataGeneration()} itemsOnPage={['10', '20', '30', '50']}/>
     </div>
   );
 }

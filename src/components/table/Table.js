@@ -63,7 +63,7 @@ export default function Table ({headers, data, itemsOnPage}) {
 
     const renderRows = (data, table_headers) => {
         let start_item_index = maxItemsOnPage * currentPage;
-        let end_item_index = start_item_index + maxItemsOnPage;
+        let end_item_index = parseInt(start_item_index) + parseInt(maxItemsOnPage);
 
         return data.slice(start_item_index, end_item_index).map(item => (
             <tr className='table__content-row'>
@@ -79,7 +79,10 @@ export default function Table ({headers, data, itemsOnPage}) {
     )
 
     const renderPagination = (data) => {
-        let pagesCount = Math.trunc(data.length / maxItemsOnPage) + 1;
+        let pagesCount = Math.trunc(data.length / parseInt(maxItemsOnPage));
+        if(pagesCount !== data.length / parseInt(maxItemsOnPage))
+         pagesCount += 1;
+
         if(currentPage >= pagesCount)
             setCurrentPage(0);
         return new Array(pagesCount).fill(null).map((el, i) => (
@@ -96,15 +99,26 @@ export default function Table ({headers, data, itemsOnPage}) {
         )
     }
 
+    const renderMaxItems = () => {
+        return itemsOnPage.map(item => 
+            <a href='#' className={`table__pagination-number ${(maxItemsOnPage === item)?'page-active':''}`} onClick={() => setMaxItemsOnPage(item)}>{item}</a>
+        )
+    }
+
     const renderTable = () => {
         let table_headers = Object.keys(headers);
         let prepared_data = sort(search(data));
 
         return (
             <div className='table'>
-                <div className='table__search'>
-                    <label className='table__search-label'>Search:</label>
-                    <input className='table__search-input' onChange={(e) => setTableSearchString(e.target.value)}/>
+                <div className='table__header'>
+                    <div className='table__pagination'>
+                        {renderMaxItems()}
+                    </div>
+                    <div className='table__search'>
+                        <label className='table__search-label'>Search:</label>
+                        <input className='table__search-input' onChange={(e) => setTableSearchString(e.target.value)}/>
+                    </div>
                 </div>
                 {renderTableContent(prepared_data, table_headers)}
                 <div className='table__pagination'>

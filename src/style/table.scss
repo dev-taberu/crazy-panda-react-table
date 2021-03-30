@@ -38,6 +38,17 @@ html, body, #root {
         }
     }
 
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__maxitems {
+        display: flex;
+    }
+
     &__search {
         display: flex;
         justify-content: flex-end;
